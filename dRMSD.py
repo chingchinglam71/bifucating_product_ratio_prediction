@@ -62,9 +62,9 @@ class dRMSDAnalyzer:
         for name, rmsd in self.rmsd_values.items():
             print(f"{name}: {rmsd:.2f} Å")
         
-        #print("\nProduct Ratios:")
-        #for name, ratio in self.ratios.items():
-        #   print(f"{name}: {ratio:.2f}")
+        print("\nProduct Ratios:")
+        for name, ratio in self.ratios.items():
+           print(f"{name}: {ratio:.2f}")
 
 
         data = {"Product": list(self.rmsd_values.keys()), "RMSD (Å)": list(self.rmsd_values.values()), 
