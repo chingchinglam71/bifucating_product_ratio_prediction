@@ -37,11 +37,16 @@ class dRMSDAnalyzer:
     
     def compute_product_ratios(self):
         """Computes the product ratio based on RMSD values."""
-        total_rmsd = sum(self.rmsd_values.values())
+        #total_rmsd = sum(self.rmsd_values.values())
+        total_rmsd = sum([1/v for v in self.rmsd_values.values()])
+
+        #print(self.rmsd_values.items())
         if total_rmsd == 0:
             self.ratios = {key: 0 for key in self.rmsd_values}
         else:
-            self.ratios = {key: 1-(rmsd / total_rmsd) for key, rmsd in self.rmsd_values.items()}
+            self.ratios = {key: ((1/rmsd) / total_rmsd) for key, rmsd in self.rmsd_values.items()}
+
+        #print(self.ratios)
     
     def run_analysis(self):
         """Runs the complete RMSD analysis and prints results."""
