@@ -5,6 +5,7 @@ import os
 import glob
 import re
 import argparse
+import sys
 
 
 '''
@@ -215,8 +216,8 @@ class RMCFAnalyzer:
 
 def print_usage():
     usage_msg = """Usage: python RMCFAnalyzer.py <folder_path>
-Usage: <folder_path> should contain RMCF_*.LOG, _TS.mol and _prod.mol files
-Usage: Please rename your structural file with the following suffix: '_TS.mol', '_prod.mol'
+Usage: <folder_path> should contain RMCF_*.LOG, _TS1.mol and _prod.mol files
+Usage: Please rename your structural file with the following suffix: '_TS1.mol', '_prod.mol'
 Usage: this script only accepts .mol files"""
     print(usage_msg)
 

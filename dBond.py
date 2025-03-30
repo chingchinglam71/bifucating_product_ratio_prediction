@@ -14,8 +14,8 @@ Zhongyue Yang, Xiaofei Dong, Yanmin Yu, Peiyuan Yu, Yingzi Li, Cooper Jamieson, 
 Journal of the American Chemical Society 2018 140 (8), 3061-3067
 DOI: 10.1021/jacs.7b13562
 
-Some parts of this scripts are taken from 
-https://github.com/Goodman-lab/VRAI-selectivity/blob/master/VRAI_selectivity_v7.py
+ExtractBonds(), IdentifyChangedBonds() and ReadGeometries() function of this scripts are taken and
+modified from https://github.com/Goodman-lab/VRAI-selectivity/blob/master/VRAI_selectivity_v7.py
 
 
 '''
@@ -139,7 +139,7 @@ def process_molecule_files(filename1, filename3, filename4):
     # Print the product ratio (rounded to 2 decimal places)
     print(f"Product ratio (rounded to 2 decimal places): {P1r:.2f} / {P2r:.2f}")
     
-    print("Changed bonds (atom index starts from 1):", all_unbonds3)
+    #print("Changed bonds (atom index starts from 1):", all_unbonds3)
     
     return calculate_B_A_ratio(bond_lengths.get(tuple(P1_bond)), bond_lengths.get(tuple(P2_bond)))
 
@@ -178,7 +178,7 @@ class dBondAnalyzer:
 def print_usage():
     usage_msg = """Usage: python dBond.py <folder_path>
 Usage: <folder_path> should contain _TS.mol and _prod.mol files
-Usage: Please rename your structural file with the following suffix: '_TS.mol', '_prod.mol'
+Usage: Please rename your structural file with the following suffix: '_TS1.mol', '_prod.mol'
 Usage: this script only accepts .mol files"""
     print(usage_msg)
 
